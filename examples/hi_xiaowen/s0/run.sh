@@ -40,8 +40,8 @@ if [ ${stage} -le 0 ] && [ ${stop_stage} -ge 0 ]; then
     mkdir -p data/$folder
     for prefix in p n; do
       mkdir -p data/${prefix}_$folder
-      json_path=$download_dir/mobvoi_hotword_dataset_resources/${prefix}_$folder.json
-      local/prepare_data.py $download_dir/mobvoi_hotword_dataset $json_path \
+      json_path=$download_dir/mobvoi_hotword_dataset_resources/mobvoi_hotword_dataset_resources/${prefix}_$folder.json
+      local/prepare_data.py $download_dir/mobvoi_hotword_dataset/mobvoi_hotword_dataset $json_path \
         data/${prefix}_$folder
     done
     cat data/p_$folder/wav.scp data/n_$folder/wav.scp > data/$folder/wav.scp
